@@ -1,10 +1,10 @@
 
-# Linear-Regression-on-LISA-SNR-Data
+# Building AI course project - Linear-Regression-on-LISA-SNR-Data
 **Paolo Marcoccia<sup>1</sup>**
 
 <sub>1. University of Stavanger, Institutt for Matematikk og Fysikk, Kjølv Egelands hus, 5.etg, E-blokk, 4021 Stavanger, Norway </sub>   
 
-## Abstract ##
+## Summary ##
 
 We use Linear Regression to try to interpolate the SNR on the LISA detector strain for a given set of Stellar Origin Binary Blach Holes Merging Events.
 To fit the model, we decided to use as features respectively Chirp Mass, Mass difference, Distance, In Band time in the LISA frequency range and Inclination.
