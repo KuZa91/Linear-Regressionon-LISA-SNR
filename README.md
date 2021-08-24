@@ -38,3 +38,16 @@ We then decided to only keep the most relevant parameters to train the Linear Re
 - _In Band Time_ : We know that the amplitude of a _GW_ signal is bigger the more the event is closest to its coalescing phase, and the frequency at which the source produce _GWs_ also increase in function of its time evolution. Furthermore, events with larger masses moves toward the coalescing phase faster than the ones with lower masses. We hence decided to use the _In Band Time_, that is the time that the event will spend in the LISA frequency range (i.e. 10⁻4 to 0.1 Hz), both to have an index on how close the event is to merging plus additional information on the mass of the events. We decided to not use the _initial frequency_ at which the events enter in the LISA band because, as stated before, the amount of time needed to coalesce will still be a function of the masses;
 
 - _Inclination Factor_ : In the case of a source orthogonal to the detector position, the amplitude of _GWs_ is deeply suppressed, we hence generated the inclination in order to maximize its value when close to _pi / 2_, as a linear regression cannot get the dependancy on this parameter (which is symmetric around _pi / 2_) by itself. We started by defining the distance of the inclination from said value as _di_, we then decided to build the _i-factor_ simply as _1/(1 - exp(-di))_ .  
+
+To conclude, we added an array of _1_ to the train data in order to fit an intercept to the model, a lite dataset to test the code can be found in the [github directory](https://github.com/KuZa91/Linear-Regressionon-LISA-SNR/blob/main/TrainDataLite.h5).
+In the proper [run](https://github.com/KuZa91/Linear-Regressionon-LISA-SNR/blob/main/SNRLinearRegression.ipynb), it was used a training set with around 35 millions events, of which 9/10 of the total were used as training data and the rest as test data.
+
+## Results and possible improvements ##
+
+After the analysis, we observed that the efficiency of the method is pretty low, with around 90% deviation from the real results both on the estimation of the train data and on the test data. This is mainly due to 2 things :
+
+- The dependancy of the SNR on the parameters we used is higly non-linear and is influenced by several other parameters, the best approach to the problem would probably be a _Neural Network_, which however requires much more resources to build than this straightforward implementation;
+
+- The dataset used to train the data comes out of a proper realization of what LISA would observe during a run, and by nature, we would have much more events that are extremely weak and few loud sources. This is indeed not the best dataset to train the method, as we would miss informations on the behaviour of signals with high SNR while overfitting signals with low amplitude. 
+
+
