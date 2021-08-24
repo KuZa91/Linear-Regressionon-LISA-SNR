@@ -1,3 +1,5 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 # Linear-Regression-on-LISA-SNR-Data
 **Paolo Marcoccia<sup>1</sup>**
 
