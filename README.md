@@ -50,4 +50,12 @@ After the analysis, we observed that the efficiency of the method is pretty low,
 
 - The dataset used to train the data comes out of a proper realization of what LISA would observe during a run, and by nature, we would have much more events that are extremely weak and few loud sources. This is indeed not the best dataset to train the method, as we would miss informations on the behaviour of signals with high SNR while overfitting signals with low amplitude. 
 
+Indeed the use of a _Neural Network_, or a more general approximator, would improve a lot the efficiency of the pipeline, even though this would happen at the cost of a loss of interpretability. The first step to do in order to improve the results is therefore to build a proper event bank with sources that span over all the possible parameters set and are dense in the _SNR_ output. Depending on the precision of choice, this can take quite some time, however having good train data is a fundamental requirement for whatever _AI_ algorithm one wishes to implement. Lastly, additional parameters as for example the initial frequency can be added to the model, even though the information of the initial frequency is already implicitly encoded in the used features by means of _Chirp Mass_ and _In Band Time_.
+
+## Acknowledgments ##
+
+We thanks the people of the LISA community for providing the ideal SNR for the events of the catalogue, in particular Nikolaos Karnesis and Stanislav V. Babak.
+Furthermore, we thanks the staff of Reaktor and University of Helsinki for providing the course on [Building AI](https://buildingai.elementsofai.com/).
+
+
 
